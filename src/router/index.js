@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
-import ProjectDetail from '../views/ProjectDetail.vue'
 import ProjectDetailGeneric from '../views/ProjectDetailGeneric.vue'
 
 // Import individual project detail components (if they exist)

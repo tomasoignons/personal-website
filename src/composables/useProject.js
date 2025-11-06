@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import projectsData from '@/data/projects.json'
 
 export function useProject(projectId) {
-  const project = ref(null)
+  const project = ref(projectsData[projectId] || null)
 
   const loadProject = () => {
     if (projectsData[projectId]) {
@@ -10,7 +10,10 @@ export function useProject(projectId) {
     }
   }
 
-  loadProject()
+  // Make project reactive and immediately available
+  if (!project.value) {
+    loadProject()
+  }
 
   const setPageTitle = () => {
     if (project.value) {

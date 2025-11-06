@@ -44,7 +44,7 @@
               <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </figure>
             <div class="card-body">
-              <div class="badge" :class="project.categoryClass">
+              <div class="badge badge-lg" :style="{ background: project.gradient, color: 'white', border: 'none' }">
                 {{ project.category }}
               </div>
               <h3 class="card-title text-base-content">{{ project.title }}</h3>

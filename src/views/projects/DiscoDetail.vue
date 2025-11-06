@@ -17,7 +17,7 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="animate-fade-in">
-            <span class="badge mb-4" :class="getBadgeClass">{{ project.category }}</span>
+            <span class="badge badge-lg mb-4" :style="{ background: project.gradient, color: 'white', border: 'none' }">{{ project.category }}</span>
             <h1 class="text-4xl md:text-5xl font-bold text-base-content mb-6">{{ project.title }}</h1>
             <p class="text-xl text-base-content/70 mb-8 leading-relaxed">
               {{ project.detailedDescription }}
@@ -28,8 +28,8 @@
                 v-if="project.externalLink"
                 :href="project.externalLink" 
                 target="_blank"
-                class="btn gap-2"
-                :class="getButtonClass"
+                class="btn gap-2 text-white border-none"
+                :style="{ background: project.gradient }"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -41,7 +41,7 @@
                     :href="project.externalLink" 
                     target="_blank"
                     class="btn btn-outline gap-2"
-                    :class="getButtonClass"
+                :style="{ borderColor: 'currentColor', color: project.gradient.match(/#[0-9a-f]{6}/i)?.[0] || '#3b82f6' }"
                     >Visit Site
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -143,11 +143,11 @@
                 :href="project.externalLink" 
                 target="_blank" 
                 class="btn btn-outline"
-                :class="getButtonClass"
+                :style="{ borderColor: 'currentColor', color: project.gradient.match(/#[0-9a-f]{6}/i)?.[0] || '#3b82f6' }"
               >
                 Learn More
               </a>
-              <router-link to="/#contact" class="btn" :class="getButtonClass">Discuss Research</router-link>
+              <router-link to="/#contact" class="btn text-white border-none" :style="{ background: project.gradient }">Discuss Research</router-link>
             </div>
           </div>
         </div>
@@ -160,11 +160,13 @@
 import { onMounted } from 'vue'
 import { useProject } from '@/composables/useProject'
 
-const { project, getBadgeClass, getButtonClass, getCallToActionText, getTechBadgeClass, formatFeature } = useProject('disco')
+const { project, getBadgeClass, getButtonClass, getCallToActionText, getTechBadgeClass, formatFeature } = useProject('disco-platform')
 
 onMounted(() => {
   // Set page title
-  document.title = `${project.title} - Emmanuel Omont Portfolio`
+  if (project.value) {
+    document.title = `${project.value.title} - Emmanuel Omont Portfolio`
+  }
 })
 </script>
 
