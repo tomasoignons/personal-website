@@ -119,7 +119,7 @@
     </section>
 
     <!-- Education Timeline -->
-    <section class="py-20 bg-base-100 flex gap-10 max-w-7xl m-auto">
+    <section class="py-20 bg-base-100 flex flex-col md:flex-row gap-10 max-w-7xl m-auto">
       <div class="max-w-4xl mx-auto px-6 flex-1/2">
         <h2 class="text-4xl md:text-5xl font-bold text-center text-base-content mb-4">
           <span class="text-primary">Education</span>
