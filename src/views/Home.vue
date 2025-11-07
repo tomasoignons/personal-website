@@ -1,8 +1,13 @@
 <template>
   <div class="min-h-screen bg-base-100">
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-base-200 to-base-100">
+    <section class="relative min-h-screen flex flex-col gap-20 items-center justify-center bg-gradient-to-br from-base-200 to-base-100 bg-red-500">
       <div class="max-w-6xl mx-auto px-6 text-center">
+        <!-- Typing Animation -->
+        <div class="mb-4">
+          <TypingAnimation />
+        </div>
+        
         <h1 class="text-5xl md:text-7xl font-bold text-base-content mb-6 animate-fade-in">
           Hi, I'm <span class="text-primary">Emmanuel Omont</span>.
         </h1>
@@ -23,120 +28,122 @@
             Let's Connect
           </a>
         </div>
-        
-        <!-- University Logos -->
-        <div class="mt-16 opacity-60 animate-fade-in" style="animation-delay: 0.6s; animation-fill-mode: both;">
-          <p class="text-sm text-base-content/50 mb-8">Currently studying at</p>
-          <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <div class="w-24 h-16 bg-base-300 rounded flex items-center justify-center hover-lift">
-              <span class="text-xs text-base-content/70 font-medium">EPFL</span>
-            </div>
-            <div class="w-24 h-16 bg-base-300 rounded flex items-center justify-center hover-lift">
-              <span class="text-xs text-base-content/70 font-medium">ETH</span>
-            </div>
-            <div class="w-24 h-16 bg-base-300 rounded flex items-center justify-center hover-lift">
-              <span class="text-xs text-base-content/70 font-medium">BoundaryAI</span>
-            </div>
-            <div class="w-24 h-16 bg-base-300 rounded flex items-center justify-center hover-lift">
-              <span class="text-xs text-base-content/70 font-medium">DiscoLab</span>
-            </div>
-          </div>
-        </div>
       </div>
+      <!-- Logo Band -->
+      <LogoBand />
       
       <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <button 
+        @click="scrollToAbout"
+        class="animate-bounce cursor-pointer bg-transparent border-none flex flex-col items-center justify-center gap-4"
+      >
+      <p class="text-xs text-base-content/40 mt-2">Scroll to explore</p>
         <svg class="w-6 h-6 text-base-content/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
-        <p class="text-xs text-base-content/40 mt-2">Scroll to explore</p>
-      </div>
+      </button>
     </section>
+
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-base-100">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="animate-on-scroll">
-            <h2 class="text-3xl md:text-4xl font-bold text-base-content mb-6">About Me</h2>
-            <div class="space-y-6 text-base-content/70 leading-relaxed">
-              <p>
-                I'm Emmanuel Omont, a Computer Science student at EPFL with a passion for technology and innovation. 
-                Currently pursuing my Bachelor's degree with an impressive GPA of 5.82/6, and doing an exchange year at ETH Zurich.
-              </p>
-              <p>
-                I specialize in backend development, machine learning, and data analysis. From creating Chrome extensions 
-                to building telegram bots with 1000+ users, I enjoy tackling complex challenges and building solutions 
-                that make a real impact.
-              </p>
-              <p>
-                When I'm not coding, I'm contributing to research projects like Disco at the Machine Learning Laboratory, 
-                teaching as a student assistant, or working on my startup BoundaryAI, where I lead backend development.
-              </p>
-            </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-base-content mb-12">
+          About <span class="text-primary">Me</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-lg text-base-content/80 leading-relaxed">
+              I'm a Computer Science student at EPFL with a passion for creating impactful technology solutions. 
+              My journey in tech has led me to explore diverse areas from machine learning to backend development.
+            </p>
+            <p class="text-lg text-base-content/80 leading-relaxed">
+              Currently, I'm gaining hands-on experience as an R&D Engineer Intern at BoundaryAI, 
+              where I work on cutting-edge AI solutions.
+            </p>
+            <p class="text-lg text-base-content/80 leading-relaxed">
+              When I'm not coding, I'm exploring entrepreneurial opportunities and building tools 
+              that solve real-world problems.
+            </p>
           </div>
-          <div class="flex justify-center animate-on-scroll">
-            <div class="w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center hover-lift">
-              <svg class="w-32 h-32 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4-4H7v2h10V7z"/>
-              </svg>
+          
+          <div class="bg-base-200 rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-base-content mb-6">Quick Facts</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-xl">🎓</span>
+                <div>
+                  <p class="font-semibold text-base-content">Education</p>
+                  <p class="text-base-content/70">EPFL & ETHZ - Computer Science</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-xl">💼</span>
+                <div>
+                  <p class="font-semibold text-base-content">Current Role</p>
+                  <p class="text-base-content/70">Lead Backend Dev at BoundaryAI</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-xl">🔧</span>
+                <div>
+                  <p class="font-semibold text-base-content">Core Skills</p>
+                  <p class="text-base-content/70">Python, Java, C++, Vue.js, React, Node.js</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary text-xl">🌍</span>
+                <div>
+                  <p class="font-semibold text-base-content">Location</p>
+                  <p class="text-base-content/70">Switzerland</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Highlights Section -->
-    <section id="highlights" class="py-20 bg-base-200">
+    <!-- Career Highlights Carousel -->
+    <section class="py-20 bg-base-200">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16 animate-on-scroll">
-          <h2 class="text-3xl md:text-4xl font-bold text-base-content mb-4">Professional Experience</h2>
-          <p class="text-xl text-base-content/70">Key roles and achievements in my career</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card bg-base-100 shadow-xl hover-lift animate-on-scroll">
-            <div class="card-body">
-              <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              </div>
-              <h3 class="card-title text-base-content">Lead Backend Developer</h3>
-              <p class="text-base-content/70 mb-2">BoundaryAI • Mar 2025 - Present</p>
-              <p class="text-base-content/70">Leading backend development for an AI startup focused on feedback analysis, managing APIs and survey analysis systems.</p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-xl hover-lift animate-on-scroll" style="animation-delay: 0.1s;">
-            <div class="card-body">
-              <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
-                <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-              </div>
-              <h3 class="card-title text-base-content">Summer Lab Intern</h3>
-              <p class="text-base-content/70 mb-2">Processor Architecture Lab • Summer 2025</p>
-              <p class="text-base-content/70">Worked on Dynamatic HLS compiler, implementing memory optimization algorithms for CFDFC circuits.</p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-xl hover-lift animate-on-scroll" style="animation-delay: 0.2s;">
-            <div class="card-body">
-              <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-6">
-                <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4-4H7v2h10V7z"/>
-                </svg>
-              </div>
-              <h3 class="card-title text-base-content">Student Assistant</h3>
-              <p class="text-base-content/70 mb-2">EPFL & ETH • Sep 2024 - Present</p>
-              <p class="text-base-content/70">Teaching assistant for Computer Science, Mathematics, and Physics courses at both universities.</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-base-content mb-4">
+          Career <span class="text-primary">Highlights</span>
+        </h2>
+        <p class="text-center text-base-content/70 mb-12 max-w-2xl mx-auto">
+          Milestones and achievements throughout my journey
+        </p>
+        <CareerHighlightsCarousel />
       </div>
     </section>
+
+    <!-- Education Timeline -->
+    <section class="py-20 bg-base-100 flex gap-10 max-w-7xl m-auto">
+      <div class="max-w-4xl mx-auto px-6 flex-1/2">
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-base-content mb-4">
+          <span class="text-primary">Education</span>
+        </h2>
+        <p class="text-center text-base-content/70 mb-12">
+          My academic background and learning journey
+        </p>
+        <Timeline :items="education" />
+      </div>
+      <div class="max-w-4xl mx-auto px-6 flex-1/2">
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-base-content mb-4">
+          <span class="text-primary">Experience</span>
+        </h2>
+        <p class="text-center text-base-content/70 mb-12">
+          Professional experience and roles I've undertaken
+        </p>
+        <Timeline :items="experience" />
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <!-- <section class="py-20 bg-base-200">
+    </section>     -->
+    <!-- Highlights Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-base-100">
@@ -164,7 +171,7 @@
     </section>
 
     <!-- Featured Projects Preview -->
-    <section id="projects-preview" class="py-20 bg-base-200">
+    <section id="projects-preview" class="py-20 bg-base-100">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16 animate-on-scroll">
           <h2 class="text-3xl md:text-4xl font-bold text-base-content mb-4">Featured Projects</h2>
@@ -172,32 +179,11 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div class="card bg-base-100 shadow-xl hover-lift animate-on-scroll">
-            <div class="h-48 bg-gradient-to-br from-primary to-primary-focus"></div>
-            <div class="card-body">
-              <div class="badge badge-primary badge-sm">Data Analysis</div>
-              <h3 class="card-title text-base-content">DatIN</h3>
-              <p class="text-base-content/70">Collected data about 2M+ companies in Switzerland for comprehensive data analysis.</p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-xl hover-lift animate-on-scroll" style="animation-delay: 0.1s;">
-            <div class="h-48 bg-gradient-to-br from-secondary to-secondary-focus"></div>
-            <div class="card-body">
-              <div class="badge badge-secondary badge-sm">Machine Learning</div>
-              <h3 class="card-title text-base-content">MemeHater</h3>
-              <p class="text-base-content/70">ML model to detect hateful memes using VisualBERT, PyTorch and TensorFlow.</p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-xl hover-lift animate-on-scroll" style="animation-delay: 0.2s;">
-            <div class="h-48 bg-gradient-to-br from-accent to-accent-focus"></div>
-            <div class="card-body">
-              <div class="badge badge-accent badge-sm">Telegram Bot</div>
-              <h3 class="card-title text-base-content">HolyBot</h3>
-              <p class="text-base-content/70">Telegram bot distributing discounts to students with 1000+ active users.</p>
-            </div>
-          </div>
+          <ProjectCard 
+            v-for="project in featuredProjects" 
+            :key="project.id"
+            :project="project"
+          />
         </div>
         
         <div class="text-center animate-on-scroll">
@@ -235,7 +221,7 @@
             </svg>
             LinkedIn
           </a>
-          <a href="mailto:emmanuel.omont@epfl.ch" class="btn btn-error gap-2 hover:scale-105 transition-transform duration-200">
+          <a href="mailto:eomont@ethz.ch" class="btn btn-error gap-2 hover:scale-105 transition-transform duration-200">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
@@ -250,18 +236,18 @@
             </svg>
             emmanuel.omont@epfl.ch
           </p>
-          <p class="mb-2 flex items-center justify-center gap-2">
+          <!-- <p class="mb-2 flex items-center justify-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
             </svg>
             +33 6 42 16 67 89
-          </p>
+          </p> -->
           <p class="flex items-center justify-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
-            Lausanne, Switzerland
+            Zürich, Switzerland
           </p>
         </div>
       </div>
@@ -270,7 +256,33 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import TypingAnimation from '@/components/TypingAnimation.vue'
+import LogoBand from '@/components/LogoBand.vue'
+import CareerHighlightsCarousel from '@/components/CareerHighlightsCarousel.vue'
+import Timeline from '@/components/Timeline.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
+import educationData from '@/data/education.json'
+import experienceData from '@/data/experience.json'
+import projectsData from '@/data/projects.json'
+
+const education = educationData
+const experience = experienceData
+
+// Filter projects with homePage: true
+const featuredProjects = computed(() => {
+  // Convert object to array and filter
+  const projectsArray = Object.values(projectsData)
+  return projectsArray.filter(project => project.homePage === true)
+})
+
+// Smooth scroll to about section
+const scrollToAbout = () => {
+  const aboutSection = document.getElementById('about')
+  if (aboutSection) {
+    aboutSection.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 // Intersection Observer for scroll animations
 onMounted(() => {
@@ -290,6 +302,8 @@ onMounted(() => {
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el)
   })
+
+  document.title = "Emmanuel - Software Engineer"
 })
 </script>
 

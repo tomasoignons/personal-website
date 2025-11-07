@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Interregional Gymnastic Vice-Champion",
+    "description": "In 2015, I managed to get the second place in the interregional gymnastic championships, I would like to give a shutout to my rival, Alex Duriez, who was later crowned world champion.",
+    "image": "/images/highlights/gymnastic.jpg",
+    "category": "Sport",
+    "date": "2015"
+  },
+  {
+    "id": 2,
+    "title": "Best French PowerPoint Content Creator",
+    "description": "In 2021, I launched an account about PowerPoint. One year later, I was the number 1 French content creator on this topic. I considered myself to be in the top 50 Europeans PowerPoint makers.",
+    "image": "/images/highlights/powerpoint.webp",
+    "category": "Excellence",
+    "date": "2023"
+  },
+  {
+    "id": 3,
+    "title": "4 languages mastered",
+    "description": "In 2023, I achieved proficiency in four languages: French, English, Spanish, and German. I learned English and German at school, and Spanish through a long 3-month exchange I did when I was 9.",
+    "image": "/images/highlights/languages.jpg",
+    "category": "Speaking",
+    "date": "2023"
+  },
+  {
+    "id": 4,
+    "title": "Top 3 EPFL Students",
+    "description": "On my first year at EPFL, I managed to get a 5.91/6 GPA, ranking me in the top 3 students of my cohort (702 students). This achievement reflects my dedication and hard work in my studies.",
+    "image": "/images/highlights/work.jpg",
+    "category": "Excellence",
+    "date": "2024"
+  },
+  {
+    "id": 5,
+    "title": "Win the Blockchain Hackathon",
+    "description": "In 2025, I participated to the Blockchain Hackathon at EPFL, and my team won first place. Thanks to this experience, I met the CTO of BoundaryAI, who later offered me a position as Lead Backend Developer.",
+    "image": "/images/highlights/blockchain.jpeg",
+    "category": "Hard Work",
+    "date": "2025"
+  }
+]

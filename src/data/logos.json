@@ -1,0 +1,32 @@
+[
+  {
+    "id": "epfl",
+    "name": "EPFL",
+    "image": "/images/logos/epfl.png",
+    "alt": "EPFL Logo"
+  },
+  {
+    "id": "eth",
+    "name": "ETH",
+    "image": "/images/logos/ethz.png",
+    "alt": "ETH Zurich Logo"
+  },
+  {
+    "id": "boundaryai",
+    "name": "BoundaryAI",
+    "image": "/images/logos/boundaryai.jpeg",
+    "alt": "BoundaryAI Logo"
+  },
+  {
+    "id": "epflmun",
+    "name": "EPFL Model United Nations",
+    "image": "/images/logos/epflmun.png",
+    "alt": "EPFL Model United Nations Logo"
+  },
+  {
+    "id": "zumun",
+    "name": "Zürich Model United Nations",
+    "image": "/images/logos/zumun.png",
+    "alt": "Zürich Model United Nations Logo"
+  }
+]

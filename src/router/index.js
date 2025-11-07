@@ -25,36 +25,36 @@ const router = createRouter({
       component: Projects
     },
     // Specific project detail routes
-    {
-      path: '/project/datin',
-      name: 'datin-detail',
-      component: DatINDetail
-    },
-    {
-      path: '/project/memehater',
-      name: 'memehater-detail',
-      component: MemeHaterDetail
-    },
-    {
-      path: '/project/holybot',
-      name: 'holybot-detail',
-      component: HolyBotDetail
-    },
-    {
-      path: '/project/mister-powerpoint',
-      name: 'mister-powerpoint-detail',
-      component: MisterPowerPointDetail
-    },
-    {
-      path: '/project/disco-platform',
-      name: 'disco-detail',
-      component: DiscoDetail
-    },
-    {
-      path: '/project/boundaryai-backend',
-      name: 'boundaryai-detail',
-      component: BoundaryAIDetail
-    },
+    // {
+    //   path: '/project/datin',
+    //   name: 'datin-detail',
+    //   component: DatINDetail
+    // },
+    // {
+    //   path: '/project/memehater',
+    //   name: 'memehater-detail',
+    //   component: MemeHaterDetail
+    // },
+    // {
+    //   path: '/project/holybot',
+    //   name: 'holybot-detail',
+    //   component: HolyBotDetail
+    // },
+    // {
+    //   path: '/project/mister-powerpoint',
+    //   name: 'mister-powerpoint-detail',
+    //   component: MisterPowerPointDetail
+    // },
+    // {
+    //   path: '/project/disco-platform',
+    //   name: 'disco-detail',
+    //   component: DiscoDetail
+    // },
+    // {
+    //   path: '/project/boundaryai-backend',
+    //   name: 'boundaryai-detail',
+    //   component: BoundaryAIDetail
+    // },
     // Generic fallback for any other project IDs
     {
       path: '/project/:id',

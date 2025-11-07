@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "institution": "ETH Zurich",
+    "degree": "Exchange Year in Computer Science",
+    "period": "2025 - 2026",
+    "description": "",
+    "location": "Zurich, Switzerland",
+    "current": true
+  },
+  {
+    "id": 2,
+    "institution": "EPFL",
+    "degree": "Bachelor in Computer Science",
+    "period": "2023 - 2026",
+    "description": "",
+    "location": "Lausanne, Switzerland",
+    "current": true
+  }
+]
