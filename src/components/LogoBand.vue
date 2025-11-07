@@ -64,7 +64,6 @@ onMounted(() => {
           const lastRect = lastChildOfFirstSet.getBoundingClientRect()
           singleSetWidth = lastRect.right - firstRect.left // 64px is the gap (gap-16 = 4rem = 64px)
           
-          console.log('Single set width:', singleSetWidth)
           animate()
         }
       }
