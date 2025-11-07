@@ -16,5 +16,32 @@
     "description": "",
     "location": "Lausanne, Switzerland",
     "current": true
+  },
+  {
+    "id": 3,
+    "institution": "Fenelon Sainte Marie",
+    "degree": "Baccalauréat Scientifique",
+    "period": "2020 - 2023",
+    "description": "Baccalauréat Scientifique with Mention Félicitation du Jury (top 2%)",
+    "location": "Paris, France",
+    "current": false
+  },
+  {
+    "id": 4,
+    "institution": "Fenelon Sainte Marie",
+    "degree": "Brevet des collèges",
+    "period": "2018 - 2020",
+    "description": "Brevet des collèges with Mention Très Bien (top 5%)",
+    "location": "Paris, France",
+    "current": false
+  },
+    {
+    "id": 5,
+    "institution": "Ste Thérèse de Houilles",
+    "degree": "Primary and Secondary Education",
+    "period": "2008 - 2018",
+    "description": "",
+    "location": "Houilles, France",
+    "current": false
   }
 ]
