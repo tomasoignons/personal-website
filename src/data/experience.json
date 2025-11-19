@@ -10,21 +10,21 @@
   },
   {
     "id": 2,
-    "company": "Processor Architecture Lab",
-    "position": "Summer Lab Intern",
-    "period": "Summer 2025",
-    "description": "Contributed to research on a HDL-based optimization for high-level synthesis compilers to improve hardware generation efficiency.",
-    "location": "EPFL, Switzerland",
-    "current": false
-  },
-  {
-    "id": 3,
     "company": "EPFL & ETH",
     "position": "Student Assistant",
     "period": "Sep 2024 - Present",
     "description": "Teaching assistant for Computer Science, Mathematics, and Physics courses.",
     "location": "Switzerland",
     "current": true
+  },
+  {
+    "id": 3,
+    "company": "Processor Architecture Lab",
+    "position": "Summer Lab Intern",
+    "period": "Summer 2025",
+    "description": "Contributed to research on a HDL-based optimization for high-level synthesis compilers to improve hardware generation efficiency.",
+    "location": "EPFL, Switzerland",
+    "current": false
   },
   {
     "id": 4,

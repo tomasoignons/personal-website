@@ -152,42 +152,6 @@
     "customComponent": null,
     "objectFit": "object-cover"
   },
-  "holybot": {
-    "id": "holybot",
-    "title": "HolyBot",
-    "description": "Automated Telegram bot serving the student community with real-time discount aggregation and deal distribution. Successfully scaled to serve 1000+ active users with intelligent filtering, personalized recommendations, and automated deal verification systems.",
-    "shortDescription": "Telegram bot distributing discounts and deals to 1000+ active student users.",
-    "detailedDescription": "HolyBot was born from the need to help students find the best deals and discounts in their daily lives. What started as a small project quickly grew into a comprehensive platform serving over 1000 active users with personalized deal recommendations and real-time notifications.",
-    "category": "Telegram Bot",
-    "categoryClass": "badge-accent",
-    "gradient": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-    "image": "/images/projects/holybot.jpg",
-    "objectFit": "object-scale-down",
-    "technologies": [
-      "Node.js",
-      "Telegram API",
-      "Python",
-      "Automation",
-      "MongoDB",
-      "Web Scraping"
-    ],
-    "year": "2024",
-    "github": null,
-    "demo": null,
-    "externalLink": "https://t.me/holybot",
-    "status": "Active",
-    "features": [
-      "Real-time Deal Aggregation: Automated scraping from multiple deal websites",
-      "Smart Filtering: AI-powered categorization and relevance scoring",
-      "Personalized Recommendations: User preference learning and targeted notifications",
-      "Deal Verification: Automated checking for deal validity and expiration",
-      "User Engagement: Interactive commands and feedback collection",
-      "Community Features: User-submitted deals and rating system"
-    ],
-    "technicalDetails": "The bot utilizes a robust Node.js backend integrated with the Telegram Bot API for seamless user interactions. Python scripts handle complex web scraping operations, while MongoDB stores user preferences, deal history, and analytics data. The system includes automated monitoring and failover mechanisms to ensure 24/7 availability.",
-    "impact": "Starting with a small group of university friends, HolyBot has grown organically through word-of-mouth recommendations. The platform has helped students save thousands of euros collectively and has become an essential tool for budget-conscious shoppers. The success led to partnerships with local businesses and integration with student discount programs.",
-    "customComponent": "HolyBotDetail"
-  },
   "mister-powerpoint": {
     "id": "mister-powerpoint",
     "title": "Mister PowerPoint",
