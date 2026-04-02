@@ -49,6 +49,41 @@
       "Homelab"
     ]
   },
+  "clastrix": {
+    "id": "clastrix",
+    "title": "Clastrix",
+    "description": "For my classes, I wanted to use Kahoot to do dynamic quizzes, but it didn't support markdown. So I decided to build my own solution",
+    "shortDescription": "For my classes, I wanted to use Kahoot to do dynamic quizzes, but it didn't support markdown. So I decided to build my own solution",
+    "detailedDescription": "Clastrix is a complete SaaS project, created to provide user the ability to create dynamic quizzes with markdown support. The app allows users to create a quiz by specifying the questions, answers, and other parameters. The app then generates a quiz that can be shared with others on the projector screen. The app also include a direct way to ask questions, and a dynamic real-time feedback for the professor. It has been tested in the Big Data class at ETHZ, with over 50 students connected on it at the same time.",
+    "categoryClass": "badge-primary",
+    "gradient": "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
+    "image": "",
+    "technologies": [
+      "Vue.js",
+      "Supabase",
+      "NuxtJS",
+      "Websockets"
+    ],
+    "year": "2025",
+    "github": null,
+    "demo": "https://clastrix.omont.ch",
+    "externalLink": null,
+    "status": "Completed",
+    "features": [
+      "Custom websocket connections",
+      "Full user authentification system",
+      "Real time questions from students",
+      "Full markdown support",
+      "Responsive design to match all type of screens"
+    ],
+    "technicalDetails": "The project started during the VisCon hackathon at ETHZ, and I later continued working on it for my personal needs. I needed an open source software, that could display questions with code and syntax highlighting, without doing some tricks like making a screeshot of vscode. Built with Vue3 and Express in the backend, it uses supabase as a database and for authentification. Current work implies integrating AI, team support, and login via switchID.",
+    "impact": "Clastrix was used in different TA classes at ETH, including mine for beta testing, and then was used in one of the Big Data Exercice session, with more than 50 users connected simultanously. I believe it has the potential to have 1K+ users, based on hardware limitation seen during the test at 50. Students that used it says its actually better than Kahoot or alternatives, as it is made by a student, for students.",
+    "customComponent": null,
+    "objectFit": "object-cover",
+    "categories": [
+      "Website"
+    ]
+  },
   "runfaker": {
     "id": "runfaker",
     "title": "Run Faker",
