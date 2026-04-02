@@ -685,6 +685,36 @@
       "Website"
     ]
   },
+  "jo-ticket-bot": {
+    "id": "jo-ticket-bot",
+    "title": "Jo Ticket Bot",
+    "description": "A bot that warns you when tickets are available for the olympic games of Milano, in a particular sport.",
+    "shortDescription": "A bot that warns you when tickets are available for the olympic games of Milano, in a particular sport.",
+    "detailedDescription": "I wanted to see my cousin race in the olympics games, but all tickets were sold out, and there was no way to know when new tickets were available. I created a bot that scraped the website of the olympic games, and that sent me a notification on my phone when new tickets were available for the sport I wanted to see (shortrack).",
+    "categoryClass": "badge-primary",
+    "gradient": "linear-gradient(135deg, #9ca3af 0%, #6b7280 100%)",
+    "image": "",
+    "technologies": [
+      "Scrapping",
+      "Real time notifications"
+    ],
+    "year": "2026",
+    "github": "",
+    "demo": null,
+    "externalLink": null,
+    "status": "Completed",
+    "features": [
+      "Real-time analysis for website",
+      "Anti captcha mechanisms",
+      "Custom notifications on phone"
+    ],
+    "technicalDetails": "The bot uses advanced anti captcha mechanisms to bypass the protections on the website, and it scrapes the website in real time to check for new tickets. When new tickets are available, it sends a notification to my phone using a custom notification system.",
+    "impact": "I managed to have cheap tickets to enter the venue, and I had a great time watching my cousin race for France in Milan",
+    "customComponent": null,
+    "categories": [
+      "Bot"
+    ]
+  },
   "minube": {
     "id": "minube",
     "title": "Minube",
