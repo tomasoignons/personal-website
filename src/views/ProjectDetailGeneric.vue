@@ -18,7 +18,14 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="animate-fade-in">
-            <span class="badge badge-lg mb-4" :class="categoryBadgeClass">{{ project.category }}</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                v-for="cat in project.categories"
+                :key="cat"
+                class="badge badge-lg"
+                :class="getCategoryBadgeClass(cat)"
+              >{{ cat }}</span>
+            </div>
             <h1 class="text-4xl md:text-5xl font-bold text-base-content mb-6">{{ project.title }}</h1>
             <p class="text-xl text-base-content/70 mb-8 leading-relaxed">
               {{ project.detailedDescription }}
@@ -101,7 +108,7 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-semibold text-base-content mb-2">Category</h3>
-            <p class="text-base-content/60">{{ project.category }}</p>
+            <p class="text-base-content/60">{{ project.categories.join(', ') }}</p>
           </div>
           <div class="text-center">
             <h3 class="text-lg font-semibold text-base-content mb-2">Status</h3>
@@ -200,9 +207,14 @@ const project = ref(null)
 
 const projectId = computed(() => route.params.id)
 
+const primaryCategory = computed(() => {
+  const cats = project.value?.categories
+  return Array.isArray(cats) ? cats[0] : cats
+})
+
 // Get gradient for the project
 const projectGradient = computed(() => {
-  return project.value?.gradient || getCategoryGradient(project.value?.category)
+  return project.value?.gradient || getCategoryGradient(primaryCategory.value)
 })
 
 // Extract color from gradient for use in borders and text
@@ -214,7 +226,7 @@ const gradientColor = computed(() => {
 
 // Get badge class based on category
 const categoryBadgeClass = computed(() => {
-  return getCategoryBadgeClass(project.value?.category)
+  return getCategoryBadgeClass(primaryCategory.value)
 })
 
 // Get button class based on category
@@ -234,8 +246,8 @@ const buttonClass = computed(() => {
     'Homelab': 'btn-neutral',
     'TBD': 'btn-ghost'
   }
-  
-  return categoryClasses[project.value?.category] || 'btn-primary'
+
+  return categoryClasses[primaryCategory.value] || 'btn-primary'
 })
 
 onMounted(() => {
@@ -292,7 +304,7 @@ const getCallToActionText = () => {
     'TBD': 'This project demonstrates technical expertise and innovation.'
   }
   
-  return categoryTexts[project.value.category] || 'This project demonstrates technical expertise and innovation.'
+  return categoryTexts[primaryCategory.value] || 'This project demonstrates technical expertise and innovation.'
 }
 </script>
 

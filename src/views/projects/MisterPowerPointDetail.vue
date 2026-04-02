@@ -17,7 +17,7 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="animate-fade-in">
-            <span class="badge badge-lg mb-4" :style="{ background: project.gradient, color: 'white', border: 'none' }">{{ project.category }}</span>
+            <div class="flex flex-wrap gap-2 mb-4"><span v-for="cat in project.categories" :key="cat" class="badge badge-lg" :style="{ background: project.gradient, color: 'white', border: 'none' }">{{ cat }}</span></div>
             <h1 class="text-4xl md:text-5xl font-bold text-base-content mb-6">{{ project.title }}</h1>
             <p class="text-xl text-base-content/70 mb-8 leading-relaxed">
               {{ project.detailedDescription }}
@@ -72,7 +72,7 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-semibold text-base-content mb-2">Category</h3>
-            <p class="text-base-content/60">{{ project.category }}</p>
+            <p class="text-base-content/60">{{ project.categories?.join(', ') }}</p>
           </div>
           <div class="text-center">
             <h3 class="text-lg font-semibold text-base-content mb-2">Status</h3>

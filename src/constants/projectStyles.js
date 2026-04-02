@@ -32,9 +32,11 @@ export const CATEGORY_BADGE_CLASSES = {
 }
 
 export function getCategoryGradient(category) {
-  return CATEGORY_GRADIENTS[category] || CATEGORY_GRADIENTS['TBD']
+  const key = Array.isArray(category) ? category[0] : category
+  return CATEGORY_GRADIENTS[key] || CATEGORY_GRADIENTS['TBD']
 }
 
 export function getCategoryBadgeClass(category) {
-  return CATEGORY_BADGE_CLASSES[category] || 'badge-ghost'
+  const key = Array.isArray(category) ? category[0] : category
+  return CATEGORY_BADGE_CLASSES[key] || 'badge-ghost'
 }

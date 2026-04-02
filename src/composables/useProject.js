@@ -21,28 +21,33 @@ export function useProject(projectId) {
     }
   }
 
+  const primaryCategory = computed(() => {
+    const cats = project.value?.categories
+    return Array.isArray(cats) ? cats[0] : cats
+  })
+
   const getBadgeClass = computed(() => {
     return project.value?.categoryClass || 'badge-primary'
   })
 
   const getButtonClass = computed(() => {
     if (!project.value) return 'btn-primary'
-    
+
     const categoryClasses = {
       'Data Analysis': 'btn-primary',
-      'Machine Learning': 'btn-secondary', 
+      'Machine Learning': 'btn-secondary',
       'Telegram Bot': 'btn-accent',
       'Content Creation': 'btn-neutral',
       'Research Project': 'btn-info',
       'Startup': 'btn-warning'
     }
-    
-    return categoryClasses[project.value.category] || 'btn-primary'
+
+    return categoryClasses[primaryCategory.value] || 'btn-primary'
   })
 
   const getCallToActionText = computed(() => {
     if (!project.value) return ''
-    
+
     const categoryTexts = {
       'Data Analysis': 'This project showcases advanced data collection, processing, and analysis techniques. Perfect for businesses looking to leverage data-driven insights for strategic decision making.',
       'Machine Learning': 'This project showcases advanced machine learning techniques in multimodal AI. Interested in similar research or collaboration opportunities in AI safety and content moderation.',
@@ -51,8 +56,8 @@ export function useProject(projectId) {
       'Research Project': 'This cutting-edge research project combines machine learning, decentralized systems, and frontend development. Open to discussions about collaborative research and privacy-preserving ML technologies.',
       'Startup': 'This startup experience showcases expertise in scalable backend development and AI system integration. Interested in AI-powered analytics and system architecture discussions.'
     }
-    
-    return categoryTexts[project.value.category] || 'This project demonstrates technical expertise and innovation.'
+
+    return categoryTexts[primaryCategory.value] || 'This project demonstrates technical expertise and innovation.'
   })
 
   const getTechBadgeClass = (tech) => {
@@ -105,6 +110,7 @@ export function useProject(projectId) {
 
   return {
     project,
+    primaryCategory,
     setPageTitle,
     getBadgeClass,
     getButtonClass,

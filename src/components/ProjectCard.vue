@@ -27,7 +27,14 @@
         </div>
       </figure>
       <div class="card-body justify-between">
-        <div class="badge badge-sm" :class="categoryBadgeClass">{{ project.category }}</div>
+        <div class="flex flex-wrap gap-1">
+          <span
+            v-for="cat in project.categories"
+            :key="cat"
+            class="badge badge-sm"
+            :class="getCategoryBadgeClass(cat)"
+          >{{ cat }}</span>
+        </div>
         <h3 class="card-title text-base-content">{{ project.title }}</h3>
         <p class="text-base-content/70 line-clamp-3">{{ project.shortDescription || project.description }}</p>
         <div class="card-actions justify-between mt-4">
@@ -81,14 +88,14 @@ const props = defineProps({
   }
 })
 
-// Get gradient for the project based on category or use project's custom gradient
-const projectGradient = computed(() => {
-  return props.project.gradient || getCategoryGradient(props.project.category)
+const primaryCategory = computed(() => {
+  const cats = props.project.categories
+  return Array.isArray(cats) ? cats[0] : cats
 })
 
-// Get badge class based on category
-const categoryBadgeClass = computed(() => {
-  return getCategoryBadgeClass(props.project.category)
+// Get gradient for the project based on category or use project's custom gradient
+const projectGradient = computed(() => {
+  return props.project.gradient || getCategoryGradient(primaryCategory.value)
 })
 
 // Get button class based on category
@@ -108,8 +115,8 @@ const buttonClass = computed(() => {
     'Homelab': 'btn-neutral',
     'TBD': 'btn-ghost'
   }
-  
-  return categoryClasses[props.project.category] || 'btn-primary'
+
+  return categoryClasses[primaryCategory.value] || 'btn-primary'
 })
 
 const scrollToTop = () => {
