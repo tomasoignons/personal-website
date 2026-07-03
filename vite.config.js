@@ -15,6 +15,9 @@ export default defineConfig({
     }
   },
   server: {
-    allowedHosts: [".localhost", "localhost", "emmanuel.omont.ch", ".omont.ch", "e.omont.ch"]
+    allowedHosts: [".localhost", "localhost", "emmanuel.omont.ch", ".omont.ch", "e.omont.ch"],
+    watch: {
+      ignored: ['**/node_modules/**']
+    }
   }
 })
