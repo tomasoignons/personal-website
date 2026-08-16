@@ -49,6 +49,41 @@
       "Homelab"
     ]
   },
+  "crisiscommand": {
+    "id": "crisiscommand",
+    "title": "Crisis Command",
+    "description": "A real-time MUN crisis management platform for coordinating MUN crisis committee",
+    "shortDescription": "A real-time MUN crisis management platform for coordinating MUN crisis committee",
+    "detailedDescription": "CrisisCommand is an innovative real-time crisis management platform designed to enhance the coordination and communication within Model United Nations (MUN) crisis committees. The platform provides a centralized hub for delegates to receive updates, submit directives, and engage in dynamic discussions during crisis simulations.",
+    "categoryClass": "badge-primary",
+    "gradient": "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
+    "image": "",
+    "technologies": [
+      "Vue.js",
+      "Supabase",
+      "Express",
+      "Websockets"
+    ],
+    "year": "2026",
+    "github": null,
+    "demo": "https://crisiscommand.net",
+    "externalLink": null,
+    "status": "Completed",
+    "features": [
+      "Custom websocket connections",
+      "Full user authentification system",
+      "Real time questions from students",
+      "Full markdown support",
+      "Responsive design to match all type of screens"
+    ],
+    "technicalDetails": "After trying out the different MUN crisis management platforms, I realized that they were all very limited in terms of features and user experience. I decided to build my own platform, using Vue.js for the frontend, Supabase for the backend, and Express for the API. The platform uses websockets to provide real-time updates to all users, and it has a full user authentification system to ensure that only authorized users can access the platform.",
+    "impact": "CrisisCommand was used in different MUN crisis committee sessions at ETH, including mine for beta testing, and then was used in one of the Big Data Exercice session, with more than 50 users connected simultanously. I believe it has the potential to have 1K+ users, based on hardware limitation seen during the test at 50. Students that used it says its actually better than Kahoot or alternatives, as it is made by a student, for students.",
+    "customComponent": null,
+    "objectFit": "object-cover",
+    "categories": [
+      "Website"
+    ]
+  },
   "clastrix": {
     "id": "clastrix",
     "title": "Clastrix",
@@ -193,6 +228,68 @@
     "objectFit": "object-cover",
     "categories": [
       "Research Project"
+    ]
+  },
+  "clibot": {
+    "id": "clibot",
+    "title": "Clibot",
+    "description": "Clibot is a chatbot designed to assist users to have a good plan to submit to claude when doing a project",
+    "shortDescription": "A chatbot for assisting users with their queries.",
+    "detailedDescription": "Clibot is a agent that can be used to assist users with their queries. It is designed to iterate over them, and provide a better prompt to then submit to another agent, or system, with more details.",
+    "categoryClass": "badge-primary",
+    "gradient": "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
+    "image": "/images/projects/dynamatic.png",
+    "technologies": [
+      "Vue.js",
+      "Node.js"
+    ],
+    "year": "2026",
+    "github": null,
+    "demo": "https://clibot.omont.ch",
+    "externalLink": null,
+    "status": "Completed",
+    "features": [
+      "Iterating over user queries to provide better prompts",
+      "Providing a better prompt to submit to another agent or system"
+    ],
+    "technicalDetails": "The project has been done with 2 amazing team members during at the Anthropic Hackathon, on the track designed by Swisscare. We won second place.",
+    "impact": "The project has won 2nd place at the Anthropic Hackathon, on the track designed by SwissCare.",
+    "customComponent": null,
+    "objectFit": "object-cover",
+    "categories": [
+      "Hackathon"
+    ]
+  },
+  "sportagent": {
+    "id": "sportagent",
+    "title": "SportAgent",
+    "description": "SportAgent is a program designed to generate a training plan for athletes.",
+    "shortDescription": "A program for generating training plans for athletes.",
+    "detailedDescription": "SportAgent is a program that helps athletes create effective training plans. It provides personalized recommendations based on the athlete's goals, fitness level, and available resources.",
+    "categoryClass": "badge-primary",
+    "gradient": "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
+    "image": "/images/projects/dynamatic.png",
+    "technologies": [
+      "Python",
+      "Python Automation",
+      "Garmin SDK",
+      "Google APIs"
+    ],
+    "year": "2026",
+    "github": null,
+    "demo": null,
+    "externalLink": null,
+    "status": "Completed",
+    "features": [
+      "Generating personalized training plans based on athlete's goals and fitness level",
+      "Uploading the training plan on Garmin and Google Calendar for easy tracking"
+    ],
+    "technicalDetails": "I wanted to have some help by training for an Ironman, and didn't want to hire or coach, or go on Claude every week, so I build an autonomous agent.",
+    "impact": "The agent is very usefull for me to train for my Ironman, and I will continue to improve it to make it even more efficient.",
+    "customComponent": null,
+    "objectFit": "object-cover",
+    "categories": [
+      "Sport"
     ]
   },
   "mister-powerpoint": {
@@ -850,7 +947,7 @@
     "customComponent": null,
     "objectFit": "object-cover",
     "categories": [
-      "Bots"
+      "Bot"
     ]
   },
   "ricardo-bot": {
@@ -883,7 +980,7 @@
     "impact": "The bot has helped me save a lot of money by notifying me of good deals on items I was interested in. It has also saved me time by automating the process of checking auctions.",
     "customComponent": null,
     "categories": [
-      "Bots"
+      "Bot"
     ]
   },
   "groceries-application": {
@@ -946,7 +1043,7 @@
     "customComponent": null,
     "objectFit": "object-cover",
     "categories": [
-      "Bots"
+      "Bot"
     ]
   },
   "salleslibres": {
@@ -1108,7 +1205,7 @@
     "impact": "I have now a full root access to my phone, thanks to this project, and I learnt a lot about how to install custom OS on a phone and reverse engineer an app. My phone is now free from the chinese surveillance system (I had a Xiaomi custom android, which was really slow). I also managed to get the best deals on ToGoodToGo 100% of the time, which is really usefull when you are a student and want to eat well for cheap.",
     "customComponent": null,
     "categories": [
-      "Bots"
+      "Bot"
     ]
   },
   "chasse-matignon": {
@@ -1174,7 +1271,7 @@
     "customComponent": null,
     "objectFit": "object-cover",
     "categories": [
-      "Bots"
+      "Bot"
     ]
   },
   "midjourney-instagram": {
