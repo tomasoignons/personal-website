@@ -268,7 +268,7 @@
     "detailedDescription": "SportAgent is a program that helps athletes create effective training plans. It provides personalized recommendations based on the athlete's goals, fitness level, and available resources.",
     "categoryClass": "badge-primary",
     "gradient": "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-    "image": "/images/projects/dynamatic.png",
+    "image": null,
     "technologies": [
       "Python",
       "Python Automation",
@@ -337,7 +337,7 @@
     "detailedDescription": "DatIN represents a comprehensive data intelligence platform designed to collect, process, and analyze business information across Switzerland's corporate landscape. This project involved building a sophisticated data pipeline capable of handling massive datasets while maintaining accuracy and relevance.",
     "categoryClass": "badge-primary",
     "gradient": "linear-gradient(135deg, #059669 0%, #065f46 100%)",
-    "image": "/images/projects/datin.jpg",
+    "image": null,
     "technologies": [
       "Python",
       "Data Analysis",
