@@ -15,20 +15,21 @@ export const CATEGORY_GRADIENTS = {
   'TBD': 'linear-gradient(135deg, #9ca3af 0%, #6b7280 100%)' // Gray
 }
 
-export const CATEGORY_BADGE_CLASSES = {
-  'Website': 'badge-primary',
-  'Data Analysis': 'badge-success',
-  'Startup': 'badge-error',
-  'Bots': 'badge-warning',
-  'Machine Learning': 'badge-info',
-  'Telegram Bot': 'badge-warning',
-  'Content Creation': 'badge-secondary',
-  'Research Project': 'badge-accent',
-  'Mobile App': 'badge-success',
-  'Web App': 'badge-info',
-  'Automation': 'badge-warning',
-  'Homelab': 'badge-neutral',
-  'TBD': 'badge-ghost'
+// Button / Badge variant used for each category
+export const CATEGORY_VARIANTS = {
+  'Website': 'default',
+  'Data Analysis': 'success',
+  'Startup': 'destructive',
+  'Bots': 'warning',
+  'Machine Learning': 'info',
+  'Telegram Bot': 'warning',
+  'Content Creation': 'secondary',
+  'Research Project': 'accent',
+  'Mobile App': 'success',
+  'Web App': 'info',
+  'Automation': 'warning',
+  'Homelab': 'neutral',
+  'TBD': 'ghost'
 }
 
 export function getCategoryGradient(category) {
@@ -36,7 +37,7 @@ export function getCategoryGradient(category) {
   return CATEGORY_GRADIENTS[key] || CATEGORY_GRADIENTS['TBD']
 }
 
-export function getCategoryBadgeClass(category) {
+export function getCategoryVariant(category, fallback = 'ghost') {
   const key = Array.isArray(category) ? category[0] : category
-  return CATEGORY_BADGE_CLASSES[key] || 'badge-ghost'
+  return CATEGORY_VARIANTS[key] || fallback
 }

@@ -1,15 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Projects from '../views/Projects.vue'
-import ProjectDetailGeneric from '../views/ProjectDetailGeneric.vue'
 
-// Import individual project detail components (if they exist)
-import DatINDetail from '../views/projects/DatINDetail.vue'
-import MemeHaterDetail from '../views/projects/MemeHaterDetail.vue'
-import HolyBotDetail from '../views/projects/HolyBotDetail.vue'
-import MisterPowerPointDetail from '../views/projects/MisterPowerPointDetail.vue'
-import DiscoDetail from '../views/projects/DiscoDetail.vue'
-import BoundaryAIDetail from '../views/projects/BoundaryAIDetail.vue'
+// Height of the fixed header, so anchors don't end up hidden behind it
+const HEADER_OFFSET = 80
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,52 +10,42 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: { title: 'Emmanuel - Software Engineer' }
     },
     {
       path: '/projects',
       name: 'projects',
-      component: Projects
+      component: () => import('../views/Projects.vue'),
+      meta: { title: 'Emmanuel Omont - Projects' }
     },
-    // Specific project detail routes
-    // {
-    //   path: '/project/datin',
-    //   name: 'datin-detail',
-    //   component: DatINDetail
-    // },
-    // {
-    //   path: '/project/memehater',
-    //   name: 'memehater-detail',
-    //   component: MemeHaterDetail
-    // },
-    // {
-    //   path: '/project/holybot',
-    //   name: 'holybot-detail',
-    //   component: HolyBotDetail
-    // },
-    // {
-    //   path: '/project/mister-powerpoint',
-    //   name: 'mister-powerpoint-detail',
-    //   component: MisterPowerPointDetail
-    // },
-    // {
-    //   path: '/project/disco-platform',
-    //   name: 'disco-detail',
-    //   component: DiscoDetail
-    // },
-    // {
-    //   path: '/project/boundaryai-backend',
-    //   name: 'boundaryai-detail',
-    //   component: BoundaryAIDetail
-    // },
-    // Generic fallback for any other project IDs
     {
       path: '/project/:id',
-      name: 'project-detail-generic',
-      component: ProjectDetailGeneric,
-      props: true
+      name: 'project-detail',
+      component: () => import('../views/ProjectDetailGeneric.vue')
+    },
+    {
+      path: '/cv',
+      name: 'cv',
+      component: () => import('../views/CV.vue'),
+      meta: { title: 'Emmanuel Omont - CV' }
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFound.vue'),
+      meta: { title: 'Page Not Found - Emmanuel Omont' }
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) return { el: to.hash, top: HEADER_OFFSET, behavior: 'smooth' }
+    return { top: 0 }
+  }
+})
+
+router.afterEach((to) => {
+  if (to.meta.title) document.title = to.meta.title
 })
 
 export default router

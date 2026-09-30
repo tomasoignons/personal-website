@@ -1,22 +1,117 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: forest --default --prefersdark;
+@import "tw-animate-css";
+
+/* Theme tokens (ported from the daisyUI "forest" theme) */
+:root {
+  color-scheme: dark;
+
+  --background: oklch(20.84% 0.008 17.911);
+  --foreground: oklch(83.768% 0.001 17.911);
+  --muted: oklch(18.522% 0.007 17.911);
+  --muted-foreground: oklch(83.768% 0.001 17.911 / 0.7);
+  --sunken: oklch(16.203% 0.007 17.911);
+  --card: oklch(20.84% 0.008 17.911);
+  --card-foreground: oklch(83.768% 0.001 17.911);
+  --popover: oklch(18.522% 0.007 17.911);
+  --popover-foreground: oklch(83.768% 0.001 17.911);
+  --border: oklch(16.203% 0.007 17.911);
+  --input: oklch(83.768% 0.001 17.911 / 0.2);
+  --ring: oklch(68.628% 0.185 148.958);
+
+  --primary: oklch(68.628% 0.185 148.958);
+  --primary-foreground: oklch(0% 0 0);
+  --secondary: oklch(69.776% 0.135 168.327);
+  --secondary-foreground: oklch(13.955% 0.027 168.327);
+  --accent: oklch(70.628% 0.119 185.713);
+  --accent-foreground: oklch(14.125% 0.023 185.713);
+  --neutral: oklch(30.698% 0.039 171.364);
+  --neutral-foreground: oklch(86.139% 0.007 171.364);
+  --info: oklch(72.06% 0.191 231.6);
+  --info-foreground: oklch(0% 0 0);
+  --success: oklch(64.8% 0.15 160);
+  --success-foreground: oklch(0% 0 0);
+  --warning: oklch(84.71% 0.199 83.87);
+  --warning-foreground: oklch(0% 0 0);
+  --destructive: oklch(71.76% 0.221 22.18);
+  --destructive-foreground: oklch(0% 0 0);
+
+  --radius: 1rem;
 }
 
+@theme inline {
+  --font-sans: 'Inter', system-ui, sans-serif;
 
-/* Global styles */
-html {
-  scroll-behavior: smooth;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-sunken: var(--sunken);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-neutral: var(--neutral);
+  --color-neutral-foreground: var(--neutral-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-slide-up: slideUp 0.8s ease-out;
+  --animate-slide-in-right: slideInRight 0.6s ease-out;
+  --animate-scale-in: scaleIn 0.5s ease-out;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes slideInRight {
+    0% { transform: translateX(30px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes scaleIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
 }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-}
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 
-/* Apply forest theme */
-html[data-theme="forest"] {
-  background: theme('colors.base-100');
-  color: theme('colors.base-content');
+  html {
+    scroll-behavior: smooth;
+    background: var(--background);
+    color: var(--foreground);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 }
 
 /* Custom scrollbar for dark theme */

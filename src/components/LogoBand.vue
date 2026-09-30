@@ -1,5 +1,5 @@
 <template>
-  <div class="logo-band-container w-screen overflow-hidden bg-base-100 py-4 border-gray-800 border-t border-b h-20 flex items-center">
+  <div class="logo-band-container w-screen overflow-hidden bg-background py-4 border-gray-800 border-t border-b h-20 flex items-center">
     <div class="logo-band flex items-center gap-8" ref="logoBand">
       <!-- Duplicate the logos multiple times for seamless scrolling -->
       <template v-for="setIndex in 3" :key="`set-${setIndex}`">

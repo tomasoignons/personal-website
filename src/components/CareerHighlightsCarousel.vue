@@ -2,66 +2,58 @@
   <div class="carousel-container relative">
     <!-- Carousel Track -->
     <div class="overflow-hidden">
-      <div 
+      <div
         class="carousel-track flex gap-6"
         :class="{ 'transition-transform duration-500 ease-in-out': isTransitioning }"
         :style="{ transform: `translateX(-${slideOffset}%)` }"
-        @transitionend="handleTransitionEnd"
+        @transitionend.self="handleTransitionEnd"
       >
-        <div 
-          v-for="(item, index) in visibleItems" 
+        <div
+          v-for="(item, index) in visibleItems"
           :key="`${item.id}-${index}`"
           class="carousel-card flex-shrink-0"
           :style="cardStyle"
         >
-          <div class="card bg-base-100 shadow-xl hover-lift h-full">
+          <Card class="shadow-xl hover-lift h-full">
             <figure class="h-48 overflow-hidden">
-              <img 
-                :src="item.image" 
+              <img
+                :src="item.image"
                 :alt="item.title"
                 class="w-full h-full object-cover"
                 @error="handleImageError"
               />
             </figure>
-            <div class="card-body">
+            <CardContent>
               <div class="flex justify-between items-start mb-2">
-                <span class="badge badge-primary badge-sm">{{ item.category }}</span>
-                <span class="text-xs text-base-content/60">{{ item.date }}</span>
+                <Badge size="sm">{{ item.category }}</Badge>
+                <span class="text-xs text-foreground/60">{{ item.date }}</span>
               </div>
-              <h3 class="card-title text-base-content text-lg">{{ item.title }}</h3>
-              <p class="text-base-content/70 text-sm line-clamp-5">{{ item.description }}</p>
-            </div>
-          </div>
+              <CardTitle class="text-foreground">{{ item.title }}</CardTitle>
+              <p class="text-foreground/70 text-sm line-clamp-5">{{ item.description }}</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
 
     <!-- Navigation Buttons at Bottom -->
     <div class="flex justify-center gap-4 mt-6">
-      <button 
-        @click="prev"
-        class="btn btn-circle btn-ghost"
-        :disabled="isTransitioning"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-      <button 
-        @click="next"
-        class="btn btn-circle btn-ghost"
-        :disabled="isTransitioning"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
+      <Button variant="ghost" size="icon" aria-label="Previous highlight" :disabled="isTransitioning" @click="prev">
+        <ChevronLeft class="w-6 h-6" />
+      </Button>
+      <Button variant="ghost" size="icon" aria-label="Next highlight" :disabled="isTransitioning" @click="next">
+        <ChevronRight class="w-6 h-6" />
+      </Button>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import highlightsData from '@/data/career-highlights.json'
 
 const highlights = highlightsData
@@ -99,21 +91,21 @@ const visibleItems = computed(() => {
 
 const next = () => {
   if (isTransitioning.value) return
-  
+
   isTransitioning.value = true
   slideOffset.value += 100 / visibleCards.value // Move by one card width
 }
 
 const prev = () => {
   if (isTransitioning.value) return
-  
+
   isTransitioning.value = true
   slideOffset.value -= 100 / visibleCards.value // Move by one card width
 }
 
 const handleTransitionEnd = () => {
   isTransitioning.value = false
-  
+
   // After transition, update currentIndex and reset slideOffset
   if (slideOffset.value > 100 / visibleCards.value) {
     // Moved right
@@ -124,7 +116,7 @@ const handleTransitionEnd = () => {
     currentIndex.value--
     slideOffset.value = 100 / visibleCards.value
   }
-  
+
   // Wrap currentIndex to stay within bounds (for cleaner debugging)
   if (currentIndex.value >= highlights.length) {
     currentIndex.value = currentIndex.value % highlights.length
@@ -156,13 +148,5 @@ onUnmounted(() => {
 <style scoped>
 .carousel-track {
   will-change: transform;
-}
-
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 </style>
